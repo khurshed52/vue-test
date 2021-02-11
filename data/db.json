@@ -1,0 +1,9 @@
+{
+    "players": [
+        {"id": 1, "name":"khurshed", "special": "All rounder"},
+          {"id": 2, "name":"Golu", "special": "All rounder"},
+            {"id": 3, "name":"Nafis", "special": "Bowler"},
+              {"id": 4, "name":"Aamir", "special": "Keeper"}
+      ]
+}
+
