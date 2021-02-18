@@ -13,12 +13,19 @@
   <fragment>
    <ul id="example-1">
        <p> {{error}}</p>
-        <li v-for="item in post.slice(0, 5)" :key="item.id">
-            <p>{{ item.title }} </p>
-             <p>{{ item.author }} </p>
-             <button class="btn btn-danger" @click="deleteData(item._id)"> Delete </button>
+      <paginate
+        name="post"
+        :list="post"
+        :per="2"
+        >
+        <li v-for="lang in paginated('post')" :key="lang.id">
+            <p>{{ lang.title }} </p>
+             <p>{{ lang.author }} </p>
+             <button class="btn btn-danger" @click="deleteData(lang._id)"> Delete </button>
              <hr/>
         </li>
+        </paginate> 
+         <paginate-links for="post" :show-step-links="true"></paginate-links>
     </ul>
   </fragment>
 </div>
@@ -33,6 +40,7 @@ export default {
  name: 'Post',
  data(){
      return {
+         paginate: ['post'],
          post:[],
          error:'',
          formData: {
@@ -44,6 +52,10 @@ export default {
      }
  },
  methods:{
+     onChangePage(post) {
+            // update page of items
+            this.post = post;
+        },
      postData(){
          axios.get('https://user-mean-test.herokuapp.com/api/blog')
          .then((res)=> {

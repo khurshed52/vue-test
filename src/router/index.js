@@ -8,31 +8,31 @@ import Post from '../views/Post.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
-  },
-  {
-    path: '/playerdetails/:id',
-    name: 'PlayerDetails',
-    component: PlayerDetails
-  },
-  {
-    path: '/faq',
-    name: 'FAQ',
-    component: Faq
-  },
-  {
-    path: '/post',
-    name: 'POST',
-    component: Post
-  }
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+      },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
+    },
+    {
+      path: '/playerdetails/:id',
+      name: 'PlayerDetails',
+      component: PlayerDetails
+    },
+    {
+      path: '/faq',
+      name: 'FAQ',
+      component: Faq
+    },
+    {
+      path: '/post',
+      name: 'POST',
+      component: Post
+    }
 ]
 
 const router = new VueRouter({

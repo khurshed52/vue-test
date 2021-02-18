@@ -10,9 +10,11 @@ import moment from 'moment';
 import ScrollAnimation from './directives/scrollanimation'
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
-
 import Fragment from 'vue-fragment';
 import i18n from './i18n'
+import VuePaginate from 'vue-paginate'
+import vuetify from './plugins/vuetify';
+Vue.use(VuePaginate)
 Vue.use(Fragment.Plugin);
 
 Vue.directive('scrollanimation', ScrollAnimation);
@@ -29,5 +31,6 @@ Vue.use(VueSweetalert2);
 new Vue({
   router,
   i18n,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')

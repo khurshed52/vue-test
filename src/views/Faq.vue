@@ -1,18 +1,38 @@
 <template>
 <div>
+
+   <button type="button" @click="showModal" class="btn btn-primary">
+       Launch demo modal
+    </button>
+    <button type="button" @click="showModal1" class="btn btn-primary">
+       Launch demo modal 1
+    </button>
+  <Modal title="Modal title new" body="this is body" uniqId="testModal">
+    hello this is modal body
+  </Modal>
+  <Modal title="Modal title new 1" body="this is body 1" uniqId="testModal1">
+    hello this is modal body
+  </Modal>
+  <button @click="goback"> push </button>
 <div class="faq" v-for="item in faq" :key="item.id">
       <div class="question"> <h1> {{item.question}}</h1></div>
        <div class="answer" v-if="item.open"> <p v-scrollanimation>{{item.answer}} </p></div>
   </div>
 </div>
+
 </template>
 
 <script>
+import Modal from '../components/Modal.vue'
 export default {
+  components:{
+    Modal
+  },
  name: 'FAQ',
  data() {
      return{
         name: 'FAQ',
+        items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
         faq:[
             {
                 id: 1,
@@ -44,8 +64,18 @@ export default {
  methods:{
      toggleOpen() {
          this.open = !this.open
-     }
- }
+     },
+
+     goback() {
+        this.$router.push('/') 
+     },
+      showModal(){
+      $('#testModal').modal('show');
+      },
+      showModal1(){
+        $('#testModal1').modal('show');
+      }
+ },
 }
 </script>
 

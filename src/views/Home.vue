@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <SignUp />
+    <button v-google-signin-button="clientId" class="google-signin-button"> Continue with Google</button>
     <!-- <List title="this is title" desc="this is g"/> 
     <List title="this is title" desc="this is fg"/> 
     <List title="this is title" desc="this is description"/> 
@@ -21,12 +22,18 @@ import SignUp from '../components/SignUp';
 import List from '../components/List.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import GoogleSignInButton from 'vue-google-signin-button-directive'
+
 Vue.use(VueAxios, axios)
 const key = 'c14eb837972a4f6965024d0161aa452e&language=en-US';
 export default {
   components: {SignUp, List},
+  directives: {
+    GoogleSignInButton
+  },
   data() {
     return {
+      clientId: '174433208318-parg9stfe9ds52c4k39meobtfvftcr5v.apps.googleusercontent.com',
       name: 'Home',
       players: []
     }
@@ -46,13 +53,19 @@ export default {
 
   methods: {
     deleteData(id) {
-      Vue.axios
-    .delete("https://user-mean-test.herokuapp.com/api/blog/" + id)
-    .then(res => {
-      this.players.splice(id, 1);
-      console.log(this.players);
-    });
+        Vue.axios
+      .delete("https://user-mean-test.herokuapp.com/api/blog/" + id)
+      .then(res => {
+        this.players.splice(id, 1);
+        console.log(this.players);
+      });
     },
+    OnGoogleAuthSuccess (idToken) {
+      // Receive the idToken and make your magic with the backend
+    },
+    OnGoogleAuthFail (error) {
+      console.log(error)
+    }
   }
  
 }
@@ -68,4 +81,15 @@ export default {
 .poster img {
     margin: 10px;
 }
+
+.google-signin-button {
+  color: white;
+  background-color: red;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px 20px 25px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 </style>
