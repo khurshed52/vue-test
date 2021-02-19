@@ -4,7 +4,8 @@
       <router-link to="/">{{ $t('nav.home') }}</router-link> |
       <router-link to="/about">{{ $t('nav.about') }}</router-link> |
        <router-link to="/faq">{{ $t('nav.faq') }}</router-link> |
-        <router-link to="/post">{{ $t('nav.post') }} </router-link>
+        <router-link to="/post">{{ $t('nav.post') }} </router-link> |
+         <router-link to="/materialForm"> Material Form </router-link>
     </div>
     <div class="user">
          <!--language switch-->

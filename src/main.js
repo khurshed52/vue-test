@@ -17,6 +17,7 @@ import vuetify from './plugins/vuetify';
 Vue.use(VuePaginate)
 Vue.use(Fragment.Plugin);
 
+
 Vue.directive('scrollanimation', ScrollAnimation);
 Vue.filter('formatDate', function(value) {
   if (value) {
