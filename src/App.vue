@@ -43,7 +43,7 @@ input, select {
       /* width: 100%; */
     line-height: 23px;
     font-size: 14px;
-    border: 1px solid #cecdcd;
+    border: 0px !important;
     padding: 10px 15px;
     background-color: #fafafa;
     transition: all .5s ease;
