@@ -1,6 +1,6 @@
 <template>
     <fragmnet>
-        <v-app>
+        
          <v-form
     ref="form"
     v-model="signup.valid"
@@ -52,7 +52,7 @@
       Reset Validation
     </v-btn>
   </v-form>
-  </v-app>
+
     </fragmnet>
 </template>
 

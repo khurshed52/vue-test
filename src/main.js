@@ -14,8 +14,10 @@ import Fragment from 'vue-fragment';
 import i18n from './i18n'
 import VuePaginate from 'vue-paginate'
 import vuetify from './plugins/vuetify';
+import DatetimePicker from 'vuetify-datetime-picker'
 Vue.use(VuePaginate)
 Vue.use(Fragment.Plugin);
+Vue.use(DatetimePicker)
 
 
 Vue.directive('scrollanimation', ScrollAnimation);

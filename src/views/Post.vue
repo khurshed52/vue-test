@@ -1,15 +1,29 @@
 <template>
 <div>
     <div>
-        <form @submit.prevent="createPost">
-            <input type="text" v-model="formData.title"/>
-             <input type="text" v-model="formData.author"/>
-             <input type="date" v-model="formData.date"/>
-              <input type="text" v-model="formData.content"/>
-              <button> Create post </button>
-        </form>
+        <v-container-fluid>
+            <form @submit.prevent="createPost">
+                <v-row no-gutters>
+                    <v-text-field v-model="formData.title" label="Title"> </v-text-field>
+                    <v-text-field v-model="formData.author" label="Author"> </v-text-field>
+                    <v-datetime-picker label="Select Datetime" v-model="formData.date"> </v-datetime-picker>
+                    <v-text-field v-model="formData.content" label="Title"> </v-text-field>
+                    <v-btn color="success" type="submit"> Create post </v-btn>
+                </v-row>
+            </form>
+        </v-container-fluid>
     </div>
-    
+    <form name="contact" netlify>
+  <p>
+    <label>Name <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
   <fragment>
    <ul id="example-1">
        <p> {{error}}</p>
@@ -44,6 +58,7 @@ export default {
          post:[],
          error:'',
          formData: {
+             valid: true,
              title: '',
              author: '',
              date:'',

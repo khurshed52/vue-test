@@ -31,7 +31,7 @@ const routes = [
     },
     {
       path: '/post',
-      name: 'POST',
+      name: 'Post',
       component: Post
     },
     {
