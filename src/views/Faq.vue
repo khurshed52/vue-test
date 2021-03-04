@@ -7,11 +7,11 @@
     <button type="button" @click="showModal1" class="btn btn-primary">
        Launch demo modal 1
     </button>
-  <Modal title="Modal title new" body="this is body" uniqId="testModal">
-    hello this is modal body
+  <Modal title="Modal title new" uniqId="testModal">
+     <h3> Modal 1 </h3>
   </Modal>
-  <Modal title="Modal title new 1" body="this is body 1" uniqId="testModal1">
-    hello this is modal body
+  <Modal title="Modal title new 1" uniqId="testModal1">
+     <h2> Modal 2 </h2>
   </Modal>
   <button @click="goback"> push </button>
 <div class="faq" v-for="item in faq" :key="item.id">

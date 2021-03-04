@@ -2,7 +2,7 @@
 <fragment>
     <!-- Modal -->
   <div class="modal fade" v-bind:id="uniqId" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div v-bind:class="`modal-dialog ${fullwidth}`" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="testModalLabel">{{title}}</h5>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-    props:['title', 'uniqId'],
+    props:['title', 'uniqId', 'fullwidth'],
     name:'Modal',
     data(){
         return{

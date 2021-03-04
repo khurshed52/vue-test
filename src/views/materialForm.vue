@@ -1,6 +1,11 @@
 <template>
     <fragmnet>
-        
+        <Modal title="Terms and Conditions" uniqId="termCo" fullwidth="modal-xl">
+          <h1> Terms</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum nihil ipsam veniam unde ad deleniti labore fuga obcaecati sint asperiores magnam eligendi ea, vitae hic id rem eum dolorem adipisci numquam! Labore veniam dolorem aliquid eos, libero veritatis non, dignissimos cumque voluptate ea eius, laboriosam fuga officia omnis. Deleniti, consequuntur.</p>
+            <h1> Conditions</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum nihil ipsam veniam unde ad deleniti labore fuga obcaecati sint asperiores magnam eligendi ea, vitae hic id rem eum dolorem adipisci numquam! Labore veniam dolorem aliquid eos, libero veritatis non, dignissimos cumque voluptate ea eius, laboriosam fuga officia omnis. Deleniti, consequuntur.</p>
+        </Modal>
          <v-form
     ref="form"
     v-model="signup.valid"
@@ -27,6 +32,9 @@
       label="Do you agree?"
       required
     ></v-checkbox>
+    <div>
+       <a @click="terms"> terms & conditions</a>
+    </div>
 
     <v-btn
       :disabled="!signup.valid"
@@ -52,12 +60,16 @@
       Reset Validation
     </v-btn>
   </v-form>
-
     </fragmnet>
+    
 </template>
 
 <script>
+import Modal from '../components/Modal.vue'
 export default {
+  components:{
+    Modal
+  },
     data(){
         return{
              signup:{
@@ -87,10 +99,17 @@ export default {
       resetValidation () {
         this.$refs.form.resetValidation()
       },
+
+      terms(){
+        $('#termCo').modal('show')
+      }
     }
 }
 </script>
 
 <style>
-
+   a {
+     cursor: pointer;
+     text-decoration: underline !important;
+   }
 </style>

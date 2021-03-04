@@ -7,9 +7,17 @@
         <router-link to="/post">{{ $t('nav.post') }} </router-link> |
          <router-link to="/materialForm"> Material Form </router-link>
     </div>
+    <template v-if="twoBtn">
+        Valid user
+    </template>
+     <template v-if="!twoBtn">
+        Invalid user 
+    </template>
+    <button> {{twoBtn? 'valid': 'invalid'}}</button>
     <div class="user">
          <!--language switch-->
-         <LanguageSwitcher/>
+         <Language/>
+         <!-- <LanguageSwitcher/> -->
          <a @click="toggleVisible" v-on-clickaway="away">
              <img src="https://media-exp1.licdn.com/dms/image/C5103AQE9g6-QbOBDWg/profile-displayphoto-shrink_800_800/0/1517350596486?e=1617840000&v=beta&t=2wnpdZ8OZxtIfnbsHwf5gPGHqAUgXpViW2IpBGrwVPk"/>
          </a>
@@ -28,21 +36,25 @@
 <script>
 import { mixin as clickaway } from 'vue-clickaway';
 import LanguageSwitcher from '../views/LanguageSwitcher'
+import Language from './Language.vue'
+import Button from './Button.vue';
 export default {
     components:{
-        LanguageSwitcher
+        LanguageSwitcher,
+        Language
     },
     mixins: [ clickaway ],
     data() {
         return {
-            isVisible: false
+            isVisible: false,
+            twoBtn: false
         }
     },
 
     methods:{
         toggleVisible() {
             this.isVisible = !this.isVisible
-        },
+        },  
 
         away() {
             this.isVisible = false

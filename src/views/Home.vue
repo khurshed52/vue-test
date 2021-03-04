@@ -8,9 +8,10 @@
     <List title="this is title" desc="this is fg"/> 
     <List title="this is title" desc="this is gfg"/>  -->
       <!-- <h1>{{name}}</h1> -->
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/ankitind/128.jpg" alt="h"/>
       <div class="poster">
             <div v-for="item in players" :key="item.id">
-             <img :src="'https://image.tmdb.org/t/p/w200' + item.poster_path" alt="loading...">
+              <img v-bind:src="'https://image.tmdb.org/t/p/w200' + item.poster_path" alt="loading...">
             </div>
     </div>
   </div>

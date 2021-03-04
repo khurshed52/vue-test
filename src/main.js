@@ -18,8 +18,8 @@ import DatetimePicker from 'vuetify-datetime-picker'
 Vue.use(VuePaginate)
 Vue.use(Fragment.Plugin);
 Vue.use(DatetimePicker)
-
-
+import '../src/assets/tailwind.css';
+import '../node_modules/khuri-common-css/css/common-min.css';
 Vue.directive('scrollanimation', ScrollAnimation);
 Vue.filter('formatDate', function(value) {
   if (value) {

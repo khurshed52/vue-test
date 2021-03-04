@@ -105,13 +105,15 @@ export default {
       this.$refs.dropdown.children[this.focusedIndex].children[0].focus()
     },
     setLocale(locale) {
+      localStorage.setItem('lang', locale)
       this.$i18n.locale = locale
       this.$router.push({
         params: { lang: locale }
       })
       this.hideDropdown()
     }
-  }
+  },
+
 }
 </script>
 

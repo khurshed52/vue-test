@@ -21,10 +21,10 @@
         :list="post"
         :per="2"
         >
-        <li v-for="lang in paginated('post')" :key="lang.id">
-            <p>{{ lang.title }} </p>
-             <p>{{ lang.author }} </p>
-             <button class="btn btn-danger" @click="deleteData(lang._id)"> Delete </button>
+        <li v-for="lang in paginated('post')" :key="lang.id" class="mb-3 p-2">
+            <p class="mb-2">{{ lang.title }} </p>
+             <p class="mb-2">{{ lang.author }} </p>
+             <Button @click="deleteData(lang._id)" color="bg-red-600"> Delete </Button>
              <hr/>
         </li>
         </paginate> 
@@ -36,11 +36,15 @@
 
 <script>
 import axios from 'axios';
+import Button from '../components/Button.vue'
 export default {
+    name:'Post',
+    components:{
+        Button
+    },
     created() {
         this.postData()
     },
- name: 'Post',
  data(){
      return {
          paginate: ['post'],
@@ -85,19 +89,8 @@ export default {
 
         // delete method 
 
-        deleteData:function(id) {
-            axios.delete('https://user-mean-test.herokuapp.com/api/blog/' + id)
-            .then((res)=> {
-                this.post.splice(id, 1);
-                this.$swal({
-             position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been deleted',
-            showConfirmButton: false,
-            timer: 1500
-         });
-            })
-           
+        deleteData(id) {
+            alert(id)  
         }
  }
  
