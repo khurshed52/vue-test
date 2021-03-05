@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1><p>{{ $t('about') }}</p></h1>
+    <h1>{{ $t('about') }}</h1>
     <button v-on:click="showPortfolio"> {{portfolio ? 'Hide my all portfolio': 'Show my all portfolio'}}</button>
     <br/>
     <template v-if="portfolio">

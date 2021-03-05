@@ -1,22 +1,19 @@
 <template>
 <div class="header">
       <div id="nav">
-      <router-link to="/">{{ $t('nav.home') }}</router-link> |
-      <router-link to="/about">{{ $t('nav.about') }}</router-link> |
-       <router-link to="/faq">{{ $t('nav.faq') }}</router-link> |
-        <router-link to="/post">{{ $t('nav.post') }} </router-link> |
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+       <router-link to="/faq">FAQ</router-link> |
+        <router-link to="/post">Post </router-link> |
          <router-link to="/materialForm"> Material Form </router-link>
     </div>
-    <template v-if="twoBtn">
-        Valid user
-    </template>
-     <template v-if="!twoBtn">
-        Invalid user 
-    </template>
-    <button> {{twoBtn? 'valid': 'invalid'}}</button>
+    
+    <h1>{{ $t('message') }}</h1>
+
     <div class="user">
          <!--language switch-->
-         <Language/>
+         <LanguageSwitch/>
+         <!-- <Language/> -->
          <!-- <LanguageSwitcher/> -->
          <a @click="toggleVisible" v-on-clickaway="away">
              <img src="https://media-exp1.licdn.com/dms/image/C5103AQE9g6-QbOBDWg/profile-displayphoto-shrink_800_800/0/1517350596486?e=1617840000&v=beta&t=2wnpdZ8OZxtIfnbsHwf5gPGHqAUgXpViW2IpBGrwVPk"/>
@@ -37,17 +34,17 @@
 import { mixin as clickaway } from 'vue-clickaway';
 import LanguageSwitcher from '../views/LanguageSwitcher'
 import Language from './Language.vue'
-import Button from './Button.vue';
+import LanguageSwitch from './LanguageSwitch'
 export default {
     components:{
         LanguageSwitcher,
-        Language
+        Language,
+        LanguageSwitch
     },
     mixins: [ clickaway ],
     data() {
         return {
             isVisible: false,
-            twoBtn: false
         }
     },
 

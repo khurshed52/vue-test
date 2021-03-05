@@ -1,9 +1,3 @@
 {
-  "about": "This is an about page",
-  "nav": {
-    "home": "Home",
-    "about": "About",
-    "faq": "FAQ",
-    "post": "Post Data"
-  }
+  "message": "ENGLISH MODE!"
 }

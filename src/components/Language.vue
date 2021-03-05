@@ -1,9 +1,9 @@
 <template>
     <div>
-        
+    
         <select v-model="language" @change="changeLanguage()">
             <option v-for="option in country" :key="option.title" :value="option.value">
-                 <img :src="option.cardImage"/> {{option.title}}
+               {{option.title}}
                 </option>
         </select>
     </div>
@@ -18,12 +18,12 @@ data(){
         country:[
             {
                title: "English",
-               cardImage: "https://via.placeholder.com/20",
+               cardImage: require('@/assets/flag_en.svg'),
                value: 'en'   
             },
              {
                title: "Hindi",
-               cardImage: "https://via.placeholder.com/20",
+               cardImage: require('@/assets/flag_hi.svg'),
                value: 'hi'   
             }
         ]

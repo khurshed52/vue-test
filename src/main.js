@@ -19,6 +19,8 @@ Vue.use(VuePaginate)
 Vue.use(Fragment.Plugin);
 Vue.use(DatetimePicker)
 import '../src/assets/tailwind.css';
+import FlagIcon from 'vue-flag-icon'
+
 import '../node_modules/khuri-common-css/css/common-min.css';
 Vue.directive('scrollanimation', ScrollAnimation);
 Vue.filter('formatDate', function(value) {
@@ -30,6 +32,7 @@ Vue.filter('formatDate', function(value) {
 Vue.config.productionTip = false
 Vue.use(require("moment"));
 Vue.use(VueSweetalert2);
+Vue.use(FlagIcon);
 
 new Vue({
   router,
