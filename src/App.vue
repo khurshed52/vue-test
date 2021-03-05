@@ -66,9 +66,5 @@ label {
 .slither-enter-to, .slither-leave {
   transform: translateX(0);
 }
-@media only screen and (max-width:480px) {
- body {
-   display:none
- }
-}
+
 </style>
